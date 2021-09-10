@@ -25,15 +25,14 @@ def myCommandCallback(cmd): # function for Callback
                         output=cmd.data['message']
                         print(output)
 try:
-\tab deviceOptions = \{"org": organization, "type": deviceType, "id": deviceId, "auth-method": authMethod, "auth-token": authToken\}
-\tab deviceCli = ibmiotf.device.Client(deviceOptions)
-\tab #..............................................
-\tab
-except Exception as e:
-\tab print("Caught exception connecting device: %s" % str(e))
-\tab sys.exit()
-# Connect and send a datapoint "hello" with value "world" into the cloud as an event of type "greeting" 10 times
-deviceCli.connect()
+   deviceOptions = \{"org": organization, "type": deviceType, "id": deviceId, "auth-method": authMethod, "auth-token": authToken\}
+    deviceCli = ibmiotf.device.Client(deviceOptions)
+  #..............................................
+     except Exception as e:
+     print("Caught exception connecting device: %s" % str(e))
+   sys.exit()
+  # Connect and send a datapoint "hello" with value "world" into the cloud as an event of type "greeting" 10 times
+  deviceCli.connect()
 while True:
               
         deviceCli.commandCallback = myCommandCallback
